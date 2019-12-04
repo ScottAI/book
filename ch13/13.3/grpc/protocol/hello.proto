@@ -1,0 +1,17 @@
+syntax = "proto3";
+package protocol;
+service HelloServer{
+// 创建第一个接口
+rpc SayHello(HelloRequest)returns(HelloReplay){}
+// 创建第二个接口
+rpc GetHelloMsg(HelloRequest)returns(HelloMessage){}
+}
+message HelloRequest{
+    string name = 1 ;
+}
+message HelloReplay{
+    string message = 1;
+}
+message HelloMessage{
+    string msg = 1;
+}

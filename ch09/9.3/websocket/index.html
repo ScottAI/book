@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+<body>
+<h1>chat/history:</h1>
+<!-- 1 -->
+<div id="mess"></div>
+
+<script type="text/javascript">
+    var mess = document.getElementById("mess");
+
+    // 2
+    var exampleSocket = new WebSocket("ws://"+location.host+"/ws")
+
+    // 3
+    var update = function(){
+        exampleSocket.onmessage = function (event) {
+            var chat = event.data;
+            var br=document.createElement("br");
+            mess.textContent = mess.textContent+chat.toString();
+            mess.appendChild(br)
+        }
+    };
+    window.setTimeout(update);
+</script>
+</body>
+</html>

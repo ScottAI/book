@@ -1,0 +1,13 @@
+syntax = "proto3";  //指定版本（proto3、proto2）
+package protocol;
+
+enum FOO
+{
+    X = 0;
+};
+
+//message是固定关键字。UserInfo是自定义类名
+message UserInfo{
+    string message = 1;
+    int32 length = 2;
+}
